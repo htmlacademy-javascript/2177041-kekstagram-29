@@ -1,11 +1,11 @@
 function isStringLengthValid(str, maxLenght) {
-  let isLenghtValid = str.length <= maxLenght;
-  return isLenghtValid;
+  return str.length <= maxLenght;
+
 }
-console.log(isStringLengthValid('test', 4))
-console.log(isStringLengthValid('test', 3))
-console.log(isStringLengthValid('test', 5))
-console.log(isStringLengthValid('go', -1))
+console.log(isStringLengthValid('test', 4));
+console.log(isStringLengthValid('test', 3));
+console.log(isStringLengthValid('test', 5));
+console.log(isStringLengthValid('go', -1));
 
 // Полиндром
 
