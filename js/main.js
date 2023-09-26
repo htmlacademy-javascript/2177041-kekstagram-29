@@ -45,15 +45,22 @@ const getRandomInteger = (min, max) => {
 //Функция для выбора случайного элемента из массива.
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
+const MAX_PHOTOS = 25;
+const MIN_LIKES = 15;
+const MAX_LIKES = 200;
+const MIN_COMMENTS = 0;
+const MAX_COMMENTS = 30;
+const MAX_AVATAR_NUMBER = 6;
+
 //Генерация данных для каждой фотографии.
-for (let i = 0; i < 25; i++) {
+for (let i = 0; i < MAX_PHOTOS; i++) {
 
   //Внутри цикла создаем объект фотографии
   const id = i + 1;
   const url = `photos/${id}.jpg`;
   const description = getRandomArrayElement(DESCRIPTION_PHOTO);
-  const likes = getRandomInteger(15, 200);
-  const numberOfComments = getRandomInteger(0, 30);
+  const likes = getRandomInteger(MIN_LIKES, MAX_LIKES);
+  const numberOfComments = getRandomInteger(MIN_COMMENTS, MAX_COMMENTS);
   const commentArray = [];
 
 
@@ -61,7 +68,7 @@ for (let j = 0; j < numberOfComments; j++) {
   //Создание отдельного комментария.
 const comment = {
   id: j + 1,
-  avatar:`img/avatar-${getRandomInteger(1,6)}.svg` ,
+  avatar:`img/avatar-${getRandomInteger(1,MAX_AVATAR_NUMBER)}.svg` ,
   message: getRandomArrayElement(COMMENTS),
   name: getRandomArrayElement(NAMES),
 };
