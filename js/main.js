@@ -60,7 +60,7 @@ for (let i = 0; i < MAX_PHOTOS; i++) {
   //Внутри цикла создаем объект фотографии
   const id = i + 1;
   const url = `photos/${id}.jpg`;
-  const description = getRandomArrayElement(DESCRIPTION_PHOTO);
+  const description = getRandomArrayElement(DESCRIPTIONS_PHOTO);
   const likes = getRandomInteger(MIN_LIKES, MAX_LIKES);
   const numberOfComments = getRandomInteger(MIN_COMMENTS, MAX_COMMENTS);
   const comments = [];
