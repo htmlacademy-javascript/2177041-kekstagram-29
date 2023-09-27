@@ -11,7 +11,7 @@ const NAMES = [
   'Лолита Милявская',
 ];
 
-const DESCRIPTION_PHOTO = [
+const DESCRIPTIONS_PHOTO = [
   'Унылая беспечность',
   'Красота и восторг',
   'Любо дорого смотреть',
@@ -31,8 +31,15 @@ const COMMENTS = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
+const MAX_PHOTOS = 25;
+const MIN_LIKES = 15;
+const MAX_LIKES = 200;
+const MIN_COMMENTS = 0;
+const MAX_COMMENTS = 30;
+const MAX_AVATAR_NUMBER = 6;
+
 //Подготовка массива для хранения фотографий
-const PHOTO_ARRAY = [];
+const photos = [];
 
 //Функция генерации случайных целых чисел
 const getRandomInteger = (min, max) => {
@@ -45,12 +52,7 @@ const getRandomInteger = (min, max) => {
 //Функция для выбора случайного элемента из массива.
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-const MAX_PHOTOS = 25;
-const MIN_LIKES = 15;
-const MAX_LIKES = 200;
-const MIN_COMMENTS = 0;
-const MAX_COMMENTS = 30;
-const MAX_AVATAR_NUMBER = 6;
+
 
 //Генерация данных для каждой фотографии.
 for (let i = 0; i < MAX_PHOTOS; i++) {
@@ -61,7 +63,7 @@ for (let i = 0; i < MAX_PHOTOS; i++) {
   const description = getRandomArrayElement(DESCRIPTION_PHOTO);
   const likes = getRandomInteger(MIN_LIKES, MAX_LIKES);
   const numberOfComments = getRandomInteger(MIN_COMMENTS, MAX_COMMENTS);
-  const commentArray = [];
+  const comments = [];
 
 
 for (let j = 0; j < numberOfComments; j++) {
@@ -72,7 +74,7 @@ const comment = {
   message: getRandomArrayElement(COMMENTS),
   name: getRandomArrayElement(NAMES),
 };
-commentArray.push(comment);
+comments.push(comment);
 
 }
 
@@ -82,12 +84,12 @@ const photo = {
   url,
   description,
   likes,
-  comments: commentArray,
+  comments,
 };
 
-PHOTO_ARRAY.push(photo);
+photos.push(photo);
 }
 
-console.log(PHOTO_ARRAY);
+console.log(photos);
 
 
