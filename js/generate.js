@@ -1,9 +1,10 @@
-import {NAMES,DESCRIPTIONS_PHOTO, COMMENTS, MAX_PHOTOS,MIN_LIKES,MAX_LIKES,MIN_COMMENTS,MAX_COMMENTS,MAX_AVATAR_NUMBER,photos} from './data.js';
-import {getRandomArrayElement,getRandomInteger} from './js/util.js';
+import {NAMES,DESCRIPTIONS_PHOTO, COMMENTS, MAX_PHOTOS,MIN_LIKES,MAX_LIKES,MIN_COMMENTS,MAX_COMMENTS,MAX_AVATAR_NUMBER} from './data.js';
+import {getRandomArrayElement,getRandomInteger} from './util.js';
 
 //Генерация данных для каждой фотографии.
 const generateData = ()=> {
-
+//Подготовка массива для хранения фотографий
+const photos = [];
 for (let i = 0; i < MAX_PHOTOS; i++) {
 
   //Внутри цикла создаем объект фотографии
@@ -36,7 +37,9 @@ const photo = {
   comments,
 };
 
-photos.push(photo);
+    photos.push(photo);
   }
+  return photos;
 }
+
 export {generateData};

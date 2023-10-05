@@ -1,5 +1,5 @@
-import {generateData} from "/js/functions.js";
+import {generateData} from "./generate.js";
 
-generateData();
+const photos = generateData();
 
 console.log(photos);
